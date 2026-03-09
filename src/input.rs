@@ -125,6 +125,11 @@ fn to_awase_key(code: &crossterm::event::KeyCode) -> Option<awase::Key> {
             'y' => Some(awase::Key::Y),
             'z' => Some(awase::Key::Z),
             ' ' => Some(awase::Key::Space),
+            '/' => Some(awase::Key::Slash),
+            '+' | '=' => Some(awase::Key::Equal),
+            '-' => Some(awase::Key::Minus),
+            ',' => Some(awase::Key::Comma),
+            '.' => Some(awase::Key::Period),
             _ => Option::None,
         },
         KeyCode::Enter => Some(awase::Key::Return),
@@ -136,6 +141,10 @@ fn to_awase_key(code: &crossterm::event::KeyCode) -> Option<awase::Key> {
         KeyCode::Down => Some(awase::Key::Down),
         KeyCode::Left => Some(awase::Key::Left),
         KeyCode::Right => Some(awase::Key::Right),
+        KeyCode::Home => Some(awase::Key::Home),
+        KeyCode::End => Some(awase::Key::End),
+        KeyCode::PageUp => Some(awase::Key::PageUp),
+        KeyCode::PageDown => Some(awase::Key::PageDown),
         _ => Option::None,
     }
 }
