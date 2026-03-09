@@ -3,6 +3,7 @@ mod bookmarks;
 mod config;
 mod fs;
 mod input;
+mod mcp;
 mod pane;
 mod platform;
 mod preview;
@@ -42,6 +43,8 @@ struct Cli {
 enum Command {
     /// Run the background file-watching daemon.
     Daemon,
+    /// Run as MCP server (stdio transport) for Claude Code integration.
+    Mcp,
 }
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
@@ -54,10 +57,18 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     let cli = Cli::parse();
 
+    // Handle MCP subcommand before loading TUI config
+    if let Some(Command::Mcp) = cli.command {
+        let rt = tokio::runtime::Runtime::new()?;
+        rt.block_on(mcp::run())?;
+        return Ok(());
+    }
+
     // Load config via shikumi
     let config = load_config();
 
     match cli.command {
+        Some(Command::Mcp) => unreachable!("handled above"),
         Some(Command::Daemon) => {
             tracing::info!("starting tanken daemon");
             let rt = tokio::runtime::Runtime::new().expect("failed to create tokio runtime");

@@ -3,6 +3,7 @@ pub mod bookmarks;
 pub mod config;
 pub mod fs;
 pub mod input;
+pub mod mcp;
 pub mod pane;
 pub mod platform;
 pub mod preview;
