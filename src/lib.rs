@@ -1,2 +1,11 @@
+pub mod app;
+pub mod bookmarks;
 pub mod config;
+pub mod fs;
+pub mod input;
+pub mod pane;
 pub mod platform;
+pub mod preview;
+pub mod render;
+pub mod search;
+pub mod tabs;
