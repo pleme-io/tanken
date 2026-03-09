@@ -2,6 +2,7 @@
 //!
 //! Three modes: Normal (default), Visual (multi-select), Command (`:` prefix).
 //! Key sequences like `gg` and `dd` are supported via a pending-key buffer.
+//! Uses `awase::Hotkey` for key binding definitions.
 
 /// Input mode for the file manager.
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
@@ -92,6 +93,72 @@ pub enum Action {
     None,
 }
 
+/// Convert a crossterm `KeyCode` to an `awase::Key`.
+fn to_awase_key(code: &crossterm::event::KeyCode) -> Option<awase::Key> {
+    use crossterm::event::KeyCode;
+    match code {
+        KeyCode::Char(c) => match c.to_ascii_lowercase() {
+            'a' => Some(awase::Key::A),
+            'b' => Some(awase::Key::B),
+            'c' => Some(awase::Key::C),
+            'd' => Some(awase::Key::D),
+            'e' => Some(awase::Key::E),
+            'f' => Some(awase::Key::F),
+            'g' => Some(awase::Key::G),
+            'h' => Some(awase::Key::H),
+            'i' => Some(awase::Key::I),
+            'j' => Some(awase::Key::J),
+            'k' => Some(awase::Key::K),
+            'l' => Some(awase::Key::L),
+            'm' => Some(awase::Key::M),
+            'n' => Some(awase::Key::N),
+            'o' => Some(awase::Key::O),
+            'p' => Some(awase::Key::P),
+            'q' => Some(awase::Key::Q),
+            'r' => Some(awase::Key::R),
+            's' => Some(awase::Key::S),
+            't' => Some(awase::Key::T),
+            'u' => Some(awase::Key::U),
+            'v' => Some(awase::Key::V),
+            'w' => Some(awase::Key::W),
+            'x' => Some(awase::Key::X),
+            'y' => Some(awase::Key::Y),
+            'z' => Some(awase::Key::Z),
+            ' ' => Some(awase::Key::Space),
+            _ => Option::None,
+        },
+        KeyCode::Enter => Some(awase::Key::Return),
+        KeyCode::Esc => Some(awase::Key::Escape),
+        KeyCode::Tab => Some(awase::Key::Tab),
+        KeyCode::Backspace => Some(awase::Key::Backspace),
+        KeyCode::Delete => Some(awase::Key::Delete),
+        KeyCode::Up => Some(awase::Key::Up),
+        KeyCode::Down => Some(awase::Key::Down),
+        KeyCode::Left => Some(awase::Key::Left),
+        KeyCode::Right => Some(awase::Key::Right),
+        _ => Option::None,
+    }
+}
+
+/// Convert crossterm modifiers to awase modifiers.
+fn to_awase_modifiers(mods: &crossterm::event::KeyModifiers) -> awase::Modifiers {
+    use crossterm::event::KeyModifiers;
+    let mut result = awase::Modifiers::NONE;
+    if mods.contains(KeyModifiers::CONTROL) {
+        result = result | awase::Modifiers::CTRL;
+    }
+    if mods.contains(KeyModifiers::ALT) {
+        result = result | awase::Modifiers::ALT;
+    }
+    if mods.contains(KeyModifiers::SHIFT) {
+        result = result | awase::Modifiers::SHIFT;
+    }
+    if mods.contains(KeyModifiers::SUPER) {
+        result = result | awase::Modifiers::CMD;
+    }
+    result
+}
+
 /// Input handler with mode and pending key state.
 #[derive(Debug)]
 pub struct InputHandler {
@@ -134,6 +201,25 @@ impl InputHandler {
                 ('d', KeyCode::Char('d')) => Action::Delete,
                 _ => Action::None,
             };
+        }
+
+        // Build awase hotkey for modifier-based bindings
+        if key.modifiers.contains(KeyModifiers::CONTROL) {
+            // Handle keys directly for punctuation not in awase::Key
+            match key.code {
+                KeyCode::Char(']') => return Action::NextTab,
+                KeyCode::Char('[') => return Action::PrevTab,
+                _ => {}
+            }
+            if let Some(awase_key) = to_awase_key(&key.code) {
+                let hotkey = awase::Hotkey::new(awase::Modifiers::CTRL, awase_key);
+                return match hotkey.key {
+                    awase::Key::T => Action::NewTab,
+                    awase::Key::W => Action::CloseTab,
+                    awase::Key::C => Action::Quit,
+                    _ => Action::None,
+                };
+            }
         }
 
         match key.code {
@@ -193,12 +279,6 @@ impl InputHandler {
             KeyCode::Char('n') => Action::SearchNext,
             KeyCode::Char('N') => Action::SearchPrev,
 
-            // Tabs
-            KeyCode::Char('t') if key.modifiers.contains(KeyModifiers::CONTROL) => Action::NewTab,
-            KeyCode::Char('w') if key.modifiers.contains(KeyModifiers::CONTROL) => Action::CloseTab,
-            KeyCode::Char(']') if key.modifiers.contains(KeyModifiers::CONTROL) => Action::NextTab,
-            KeyCode::Char('[') if key.modifiers.contains(KeyModifiers::CONTROL) => Action::PrevTab,
-
             // Bookmarks
             KeyCode::Char('b') => Action::BookmarkAdd,
 
@@ -215,7 +295,6 @@ impl InputHandler {
 
             // Quit
             KeyCode::Char('q') => Action::Quit,
-            KeyCode::Char('c') if key.modifiers.contains(KeyModifiers::CONTROL) => Action::Quit,
 
             _ => Action::None,
         }
@@ -370,5 +449,24 @@ mod tests {
     fn mode_default_is_normal() {
         let handler = InputHandler::new();
         assert_eq!(handler.mode, Mode::Normal);
+    }
+
+    #[test]
+    fn awase_key_conversion() {
+        use crossterm::event::KeyCode;
+        assert_eq!(to_awase_key(&KeyCode::Char('a')), Some(awase::Key::A));
+        assert_eq!(to_awase_key(&KeyCode::Esc), Some(awase::Key::Escape));
+        assert_eq!(to_awase_key(&KeyCode::Enter), Some(awase::Key::Return));
+        assert_eq!(to_awase_key(&KeyCode::Tab), Some(awase::Key::Tab));
+    }
+
+    #[test]
+    fn awase_modifier_conversion() {
+        use crossterm::event::KeyModifiers;
+        let mods = KeyModifiers::CONTROL | KeyModifiers::SHIFT;
+        let awase_mods = to_awase_modifiers(&mods);
+        assert!(awase_mods.contains(awase::Modifiers::CTRL));
+        assert!(awase_mods.contains(awase::Modifiers::SHIFT));
+        assert!(!awase_mods.contains(awase::Modifiers::CMD));
     }
 }

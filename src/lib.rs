@@ -8,5 +8,6 @@ pub mod pane;
 pub mod platform;
 pub mod preview;
 pub mod render;
+pub mod scripting;
 pub mod search;
 pub mod tabs;

@@ -22,6 +22,8 @@ lto = true
 
 [dependencies]
 shikumi = { git = "https://github.com/pleme-io/shikumi" }
+soushi = { git = "https://github.com/pleme-io/soushi" }
+awase = { git = "https://github.com/pleme-io/awase" }
 kaname = { git = "https://github.com/pleme-io/kaname" }
 rmcp = { version = "0.15", features = ["server", "transport-io"] }
 schemars = "0.8"
