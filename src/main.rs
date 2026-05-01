@@ -17,12 +17,7 @@ use std::time::Duration;
 
 use clap::{Parser, Subcommand};
 use crossterm::event::{self, Event};
-use crossterm::terminal::{
-    self, EnterAlternateScreen, LeaveAlternateScreen,
-};
-use crossterm::ExecutableCommand;
-use ratatui::backend::CrosstermBackend;
-use ratatui::Terminal;
+use egaku_term::Terminal;
 use tracing_subscriber::EnvFilter;
 
 use crate::app::App;
@@ -127,38 +122,26 @@ fn load_config() -> TankenConfig {
 }
 
 fn run_tui(config: TankenConfig, initial_path: PathBuf) -> Result<(), Box<dyn std::error::Error>> {
-    // Set up terminal
-    terminal::enable_raw_mode()?;
-    let mut stdout = io::stdout();
-    stdout.execute(EnterAlternateScreen)?;
-    let backend = CrosstermBackend::new(stdout);
-    let mut terminal = Terminal::new(backend)?;
-
-    // Create app
+    // egaku-term owns terminal lifecycle (raw mode + alt screen + hide
+    // cursor + Drop-safe restore on panic).
+    let mut term = Terminal::enter()?;
     let mut app = App::new(config, initial_path);
-
-    // Main event loop
-    let result = run_event_loop(&mut terminal, &mut app);
-
-    // Restore terminal
-    terminal::disable_raw_mode()?;
-    io::stdout().execute(LeaveAlternateScreen)?;
-
-    result
+    run_event_loop(&mut term, &mut app)
 }
 
 fn run_event_loop(
-    terminal: &mut Terminal<CrosstermBackend<io::Stdout>>,
+    term: &mut Terminal,
     app: &mut App,
 ) -> Result<(), Box<dyn std::error::Error>> {
     loop {
-        terminal.draw(|frame| render::draw(frame, app))?;
+        term.clear()?;
+        render::draw(term, app)?;
+        term.flush()?;
 
         if app.should_quit {
             return Ok(());
         }
 
-        // Poll for events with a timeout
         if event::poll(Duration::from_millis(100))? {
             if let Event::Key(key_event) = event::read()? {
                 let action = app.input.handle_key(key_event);
@@ -167,3 +150,9 @@ fn run_event_loop(
         }
     }
 }
+
+// `io` is referenced indirectly via egaku_term::Terminal; the import stays
+// to keep error-conversion paths tidy.
+const _: fn() = || {
+    let _ = std::mem::size_of::<io::Error>();
+};
