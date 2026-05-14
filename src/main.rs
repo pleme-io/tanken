@@ -1,3 +1,8 @@
+// Install mimalloc as the global allocator via moldura — fleet-
+// canonical. Free perf on tanken's directory-walking + preview
+// rendering paths.
+moldura::mimalloc_init!();
+
 mod app;
 mod bookmarks;
 mod config;
