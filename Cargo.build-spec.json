@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "workspace": {
     "root": "/Users/drzzln/code/github/pleme-io/tanken",
     "members": [
@@ -29,6 +29,11 @@
       ],
       "proc_macro": false,
       "build_script": "build.rs",
+      "binaries": [],
+      "lib_target": {
+        "name": "ahash",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "cfg_if",
@@ -183,6 +188,11 @@
       ],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "aho_corasick",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "memchr",
@@ -223,6 +233,11 @@
       ],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "allocator_api2",
+        "path": "src/lib.rs"
+      },
       "dependencies": [],
       "runtime_dependencies": [],
       "build_dependencies": [],
@@ -245,6 +260,11 @@
       ],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "anstream",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "anstyle",
@@ -389,6 +409,11 @@
       ],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "anstyle",
+        "path": "src/lib.rs"
+      },
       "dependencies": [],
       "runtime_dependencies": [],
       "build_dependencies": [],
@@ -410,6 +435,11 @@
       ],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "anstyle_parse",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "utf8parse",
@@ -448,6 +478,11 @@
       "features": [],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "anstyle_query",
+        "path": "src/lib.rs"
+      },
       "dependencies": [],
       "runtime_dependencies": [],
       "build_dependencies": [],
@@ -469,6 +504,11 @@
       ],
       "proc_macro": false,
       "build_script": "build.rs",
+      "binaries": [],
+      "lib_target": {
+        "name": "anyhow",
+        "path": "src/lib.rs"
+      },
       "dependencies": [],
       "runtime_dependencies": [],
       "build_dependencies": [],
@@ -487,6 +527,11 @@
       "features": [],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "arc_swap",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "rustversion",
@@ -525,6 +570,11 @@
       "features": [],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "arrayref",
+        "path": "src/lib.rs"
+      },
       "dependencies": [],
       "runtime_dependencies": [],
       "build_dependencies": [],
@@ -543,6 +593,11 @@
       "features": [],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "arrayvec",
+        "path": "src/lib.rs"
+      },
       "dependencies": [],
       "runtime_dependencies": [],
       "build_dependencies": [],
@@ -561,6 +616,11 @@
       "features": [],
       "proc_macro": true,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "async_trait",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "proc_macro2",
@@ -656,6 +716,11 @@
       "features": [],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "autocfg",
+        "path": "src/lib.rs"
+      },
       "dependencies": [],
       "runtime_dependencies": [],
       "build_dependencies": [],
@@ -669,11 +734,16 @@
         "kind": "git",
         "url": "https://github.com/pleme-io/awase",
         "rev": "ec6176f462c7bcb683436b8f2ec626921e69df80",
-        "sha256": null
+        "sha256": "0wr7kfd8kbgk3r7cy2cnci6r28g4sh0qin3ix70khphb7kjp4m88"
       },
       "features": [],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "awase",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "serde",
@@ -756,6 +826,11 @@
       ],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "base64",
+        "path": "src/lib.rs"
+      },
       "dependencies": [],
       "runtime_dependencies": [],
       "build_dependencies": [],
@@ -776,6 +851,11 @@
       ],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "bitflags",
+        "path": "src/lib.rs"
+      },
       "dependencies": [],
       "runtime_dependencies": [],
       "build_dependencies": [],
@@ -797,6 +877,11 @@
       ],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "bitpacking",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "crunchy",
@@ -838,6 +923,11 @@
       ],
       "proc_macro": false,
       "build_script": "build.rs",
+      "binaries": [],
+      "lib_target": {
+        "name": "blake3",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "arrayref",
@@ -959,6 +1049,11 @@
       ],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "byteorder",
+        "path": "src/lib.rs"
+      },
       "dependencies": [],
       "runtime_dependencies": [],
       "build_dependencies": [],
@@ -980,6 +1075,11 @@
       ],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "bytes",
+        "path": "src/lib.rs"
+      },
       "dependencies": [],
       "runtime_dependencies": [],
       "build_dependencies": [],
@@ -1000,6 +1100,11 @@
       ],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "cc",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "find_msvc_tools",
@@ -1099,6 +1204,11 @@
       "features": [],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "census",
+        "path": "src/lib.rs"
+      },
       "dependencies": [],
       "runtime_dependencies": [],
       "build_dependencies": [],
@@ -1117,6 +1227,11 @@
       "features": [],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "cfg_if",
+        "path": "src/lib.rs"
+      },
       "dependencies": [],
       "runtime_dependencies": [],
       "build_dependencies": [],
@@ -1149,6 +1264,11 @@
       ],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "chrono",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "iana_time_zone",
@@ -1245,6 +1365,16 @@
       ],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [
+        {
+          "name": "stdio-fixture",
+          "path": "src/bin/stdio-fixture.rs"
+        }
+      ],
+      "lib_target": {
+        "name": "clap",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "clap_builder",
@@ -1308,6 +1438,11 @@
       ],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "clap_builder",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "anstream",
@@ -1402,6 +1537,11 @@
       ],
       "proc_macro": true,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "clap_derive",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "heck",
@@ -1505,6 +1645,11 @@
       "features": [],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "clap_lex",
+        "path": "src/lib.rs"
+      },
       "dependencies": [],
       "runtime_dependencies": [],
       "build_dependencies": [],
@@ -1523,6 +1668,11 @@
       "features": [],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "colorchoice",
+        "path": "src/lib.rs"
+      },
       "dependencies": [],
       "runtime_dependencies": [],
       "build_dependencies": [],
@@ -1541,6 +1691,11 @@
       "features": [],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "const_random",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "const_random_macro",
@@ -1586,6 +1741,11 @@
       "features": [],
       "proc_macro": true,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "const_random_macro",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "getrandom",
@@ -1675,6 +1835,11 @@
       ],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "constant_time_eq",
+        "path": "src/lib.rs"
+      },
       "dependencies": [],
       "runtime_dependencies": [],
       "build_dependencies": [],
@@ -1693,6 +1858,11 @@
       "features": [],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "convert_case",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "unicode_segmentation",
@@ -1741,6 +1911,11 @@
       ],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "core_foundation_sys",
+        "path": "src/lib.rs"
+      },
       "dependencies": [],
       "runtime_dependencies": [],
       "build_dependencies": [],
@@ -1762,6 +1937,11 @@
       ],
       "proc_macro": false,
       "build_script": "build.rs",
+      "binaries": [],
+      "lib_target": {
+        "name": "crc32fast",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "cfg_if",
@@ -1810,6 +1990,11 @@
       ],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "crossbeam_channel",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "crossbeam_utils",
@@ -1858,6 +2043,11 @@
       ],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "crossbeam_deque",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "crossbeam_epoch",
@@ -1930,6 +2120,11 @@
       ],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "crossbeam_epoch",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "crossbeam_utils",
@@ -1978,6 +2173,11 @@
       ],
       "proc_macro": false,
       "build_script": "build.rs",
+      "binaries": [],
+      "lib_target": {
+        "name": "crossbeam_utils",
+        "path": "src/lib.rs"
+      },
       "dependencies": [],
       "runtime_dependencies": [],
       "build_dependencies": [],
@@ -2001,6 +2201,11 @@
       ],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "crossterm",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "bitflags",
@@ -2161,6 +2366,11 @@
       ],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "crossterm",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "bitflags",
@@ -2387,6 +2597,11 @@
       ],
       "proc_macro": false,
       "build_script": "build.rs",
+      "binaries": [],
+      "lib_target": {
+        "name": "crunchy",
+        "path": "src/lib.rs"
+      },
       "dependencies": [],
       "runtime_dependencies": [],
       "build_dependencies": [],
@@ -2408,6 +2623,11 @@
       ],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "darling",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "darling_core",
@@ -2467,6 +2687,11 @@
       ],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "darling_core",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "ident_case",
@@ -2590,6 +2815,11 @@
       "features": [],
       "proc_macro": true,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "darling_macro",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "darling_core",
@@ -2668,6 +2898,11 @@
       ],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "deranged",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "powerfmt",
@@ -2728,6 +2963,11 @@
       ],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "derive_more",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "derive_more_impl",
@@ -2776,6 +3016,11 @@
       ],
       "proc_macro": true,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "derive_more_impl",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "convert_case",
@@ -2894,6 +3139,11 @@
       "features": [],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "dirs",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "dirs_sys",
@@ -2939,6 +3189,11 @@
       "features": [],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "dirs_sys",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "libc",
@@ -3004,6 +3259,11 @@
       ],
       "proc_macro": true,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "document_features",
+        "path": "lib.rs"
+      },
       "dependencies": [
         {
           "name": "litrs",
@@ -3045,6 +3305,11 @@
       ],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "downcast_rs",
+        "path": "src/lib.rs"
+      },
       "dependencies": [],
       "runtime_dependencies": [],
       "build_dependencies": [],
@@ -3063,6 +3328,11 @@
       "features": [],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "dyn_clone",
+        "path": "src/lib.rs"
+      },
       "dependencies": [],
       "runtime_dependencies": [],
       "build_dependencies": [],
@@ -3076,11 +3346,16 @@
         "kind": "git",
         "url": "https://github.com/pleme-io/egaku",
         "rev": "b67e5bb1ab7b817bcc2ecd4ef7a8ea0e06fa814f",
-        "sha256": null
+        "sha256": "0sdr8mg3rq9r8nhg7wm77v7nh2z4vx3j5p3qswkgfacgpbvkalqa"
       },
       "features": [],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "egaku",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "serde",
@@ -3203,13 +3478,18 @@
         "kind": "git",
         "url": "https://github.com/pleme-io/egaku-term",
         "rev": "aa3fd63402577c624df499e5e3798d313e4fe6cd",
-        "sha256": null
+        "sha256": "02hjvz74nra29ldpyvf7kn8a4g77fzn2wzjqq0hmghbwmmrj5yac"
       },
       "features": [
         "default"
       ],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "egaku_term",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "crossterm",
@@ -3312,6 +3592,11 @@
       ],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "either",
+        "path": "src/lib.rs"
+      },
       "dependencies": [],
       "runtime_dependencies": [],
       "build_dependencies": [],
@@ -3330,6 +3615,11 @@
       "features": [],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "equivalent",
+        "path": "src/lib.rs"
+      },
       "dependencies": [],
       "runtime_dependencies": [],
       "build_dependencies": [],
@@ -3351,6 +3641,11 @@
       ],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "errno",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "libc",
@@ -3389,6 +3684,11 @@
       "features": [],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "fastdivide",
+        "path": "src/lib.rs"
+      },
       "dependencies": [],
       "runtime_dependencies": [],
       "build_dependencies": [],
@@ -3411,6 +3711,11 @@
       ],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "fastrand",
+        "path": "src/lib.rs"
+      },
       "dependencies": [],
       "runtime_dependencies": [],
       "build_dependencies": [],
@@ -3436,6 +3741,11 @@
       ],
       "proc_macro": false,
       "build_script": "build.rs",
+      "binaries": [],
+      "lib_target": {
+        "name": "figment",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "pear",
@@ -3565,6 +3875,11 @@
       "features": [],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "find_msvc_tools",
+        "path": "src/lib.rs"
+      },
       "dependencies": [],
       "runtime_dependencies": [],
       "build_dependencies": [],
@@ -3586,6 +3901,11 @@
       ],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "fnv",
+        "path": "lib.rs"
+      },
       "dependencies": [],
       "runtime_dependencies": [],
       "build_dependencies": [],
@@ -3604,6 +3924,11 @@
       "features": [],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "foldhash",
+        "path": "src/lib.rs"
+      },
       "dependencies": [],
       "runtime_dependencies": [],
       "build_dependencies": [],
@@ -3625,6 +3950,11 @@
       ],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "fs4",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "rustix",
@@ -3667,6 +3997,11 @@
       "features": [],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "fsevent_sys",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "libc",
@@ -3712,6 +4047,11 @@
       ],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "futures",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "futures_channel",
@@ -3906,6 +4246,11 @@
       ],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "futures_channel",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "futures_core",
@@ -3979,6 +4324,11 @@
       ],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "futures_core",
+        "path": "src/lib.rs"
+      },
       "dependencies": [],
       "runtime_dependencies": [],
       "build_dependencies": [],
@@ -3999,6 +4349,11 @@
       ],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "futures_executor",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "futures_core",
@@ -4094,6 +4449,11 @@
       ],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "futures_io",
+        "path": "src/lib.rs"
+      },
       "dependencies": [],
       "runtime_dependencies": [],
       "build_dependencies": [],
@@ -4112,6 +4472,11 @@
       "features": [],
       "proc_macro": true,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "futures_macro",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "proc_macro2",
@@ -4201,6 +4566,11 @@
       ],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "futures_sink",
+        "path": "src/lib.rs"
+      },
       "dependencies": [],
       "runtime_dependencies": [],
       "build_dependencies": [],
@@ -4222,6 +4592,11 @@
       ],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "futures_task",
+        "path": "src/lib.rs"
+      },
       "dependencies": [],
       "runtime_dependencies": [],
       "build_dependencies": [],
@@ -4254,6 +4629,11 @@
       ],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "futures_util",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "futures_channel",
@@ -4481,6 +4861,11 @@
       ],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "fuzzy_matcher",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "thread_local",
@@ -4521,6 +4906,11 @@
       ],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "getrandom",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "cfg_if",
@@ -4586,6 +4976,11 @@
       ],
       "proc_macro": false,
       "build_script": "build.rs",
+      "binaries": [],
+      "lib_target": {
+        "name": "getrandom",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "cfg_if",
@@ -4649,6 +5044,11 @@
       "features": [],
       "proc_macro": false,
       "build_script": "build.rs",
+      "binaries": [],
+      "lib_target": {
+        "name": "getrandom",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "cfg_if",
@@ -4719,6 +5119,11 @@
       ],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "hashbrown",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "allocator_api2",
@@ -4800,6 +5205,11 @@
       "features": [],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "hashbrown",
+        "path": "src/lib.rs"
+      },
       "dependencies": [],
       "runtime_dependencies": [],
       "build_dependencies": [],
@@ -4818,6 +5228,11 @@
       "features": [],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "heck",
+        "path": "src/lib.rs"
+      },
       "dependencies": [],
       "runtime_dependencies": [],
       "build_dependencies": [],
@@ -4840,6 +5255,11 @@
       ],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "hex",
+        "path": "src/lib.rs"
+      },
       "dependencies": [],
       "runtime_dependencies": [],
       "build_dependencies": [],
@@ -4858,6 +5278,11 @@
       "features": [],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "htmlescape",
+        "path": "src/lib.rs"
+      },
       "dependencies": [],
       "runtime_dependencies": [],
       "build_dependencies": [],
@@ -4876,6 +5301,11 @@
       "features": [],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "humansize",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "libm",
@@ -4916,6 +5346,11 @@
       ],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "iana_time_zone",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "core_foundation_sys",
@@ -4961,6 +5396,11 @@
       "features": [],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "ident_case",
+        "path": "src/lib.rs"
+      },
       "dependencies": [],
       "runtime_dependencies": [],
       "build_dependencies": [],
@@ -4983,6 +5423,11 @@
       ],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "indexmap",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "equivalent",
@@ -5057,6 +5502,11 @@
       "features": [],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "inlinable_string",
+        "path": "src/lib.rs"
+      },
       "dependencies": [],
       "runtime_dependencies": [],
       "build_dependencies": [],
@@ -5081,6 +5531,11 @@
       ],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "instant",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "cfg_if",
@@ -5126,6 +5581,11 @@
       "features": [],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "irodori",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "serde",
@@ -5170,6 +5630,11 @@
       ],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "is_terminal_polyfill",
+        "path": "src/lib.rs"
+      },
       "dependencies": [],
       "runtime_dependencies": [],
       "build_dependencies": [],
@@ -5183,13 +5648,18 @@
         "kind": "git",
         "url": "https://github.com/pleme-io/ishou",
         "rev": "eecc320061a0b0af73cc5aa63696f95ccc6cec42",
-        "sha256": null
+        "sha256": "0fbhnd881b5aykb6k6r2zixwffvhpl79mx5b1d3g7s5z0lfkjv7k"
       },
       "features": [
         "default"
       ],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "ishou_tokens",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "irodori",
@@ -5272,6 +5742,11 @@
       ],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "itertools",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "either",
@@ -5310,6 +5785,11 @@
       "features": [],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "itoa",
+        "path": "src/lib.rs"
+      },
       "dependencies": [],
       "runtime_dependencies": [],
       "build_dependencies": [],
@@ -5328,6 +5808,11 @@
       "features": [],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "jobserver",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "libc",
@@ -5361,11 +5846,16 @@
         "kind": "git",
         "url": "https://github.com/pleme-io/kaname",
         "rev": "b4191107edb45b277651685b6165b4d220fbf764",
-        "sha256": null
+        "sha256": "1kp9rh5pyn49pjcn9nf7x1vkm18vadr38hxx265hf077ljayr7ll"
       },
       "features": [],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "kaname",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "rmcp",
@@ -5528,6 +6018,11 @@
       "features": [],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "lazy_static",
+        "path": "src/lib.rs"
+      },
       "dependencies": [],
       "runtime_dependencies": [],
       "build_dependencies": [],
@@ -5546,6 +6041,11 @@
       "features": [],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "levenshtein_automata",
+        "path": "src/lib.rs"
+      },
       "dependencies": [],
       "runtime_dependencies": [],
       "build_dependencies": [],
@@ -5568,6 +6068,11 @@
       ],
       "proc_macro": false,
       "build_script": "build.rs",
+      "binaries": [],
+      "lib_target": {
+        "name": "libc",
+        "path": "src/lib.rs"
+      },
       "dependencies": [],
       "runtime_dependencies": [],
       "build_dependencies": [],
@@ -5589,6 +6094,11 @@
       ],
       "proc_macro": false,
       "build_script": "build.rs",
+      "binaries": [],
+      "lib_target": {
+        "name": "libm",
+        "path": "src/lib.rs"
+      },
       "dependencies": [],
       "runtime_dependencies": [],
       "build_dependencies": [],
@@ -5607,6 +6117,11 @@
       "features": [],
       "proc_macro": false,
       "build_script": "build.rs",
+      "binaries": [],
+      "lib_target": {
+        "name": "libmimalloc_sys",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "cc",
@@ -5645,6 +6160,11 @@
       "features": [],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "litrs",
+        "path": "src/lib.rs"
+      },
       "dependencies": [],
       "runtime_dependencies": [],
       "build_dependencies": [],
@@ -5666,6 +6186,11 @@
       ],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "lock_api",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "scopeguard",
@@ -5706,6 +6231,11 @@
       ],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "log",
+        "path": "src/lib.rs"
+      },
       "dependencies": [],
       "runtime_dependencies": [],
       "build_dependencies": [],
@@ -5727,6 +6257,11 @@
       ],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "lru",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "hashbrown",
@@ -5765,6 +6300,11 @@
       "features": [],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "lz4_flex",
+        "path": "src/lib.rs"
+      },
       "dependencies": [],
       "runtime_dependencies": [],
       "build_dependencies": [],
@@ -5783,6 +6323,11 @@
       "features": [],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "matchers",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "regex_automata",
@@ -5828,6 +6373,11 @@
       "features": [],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "measure_time",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "instant",
@@ -5894,6 +6444,11 @@
       ],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "memchr",
+        "path": "src/lib.rs"
+      },
       "dependencies": [],
       "runtime_dependencies": [],
       "build_dependencies": [],
@@ -5912,6 +6467,11 @@
       "features": [],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "memmap2",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "libc",
@@ -5950,6 +6510,11 @@
       "features": [],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "mimalloc",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "libmimalloc_sys",
@@ -5997,6 +6562,11 @@
       ],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "minimal_lexical",
+        "path": "src/lib.rs"
+      },
       "dependencies": [],
       "runtime_dependencies": [],
       "build_dependencies": [],
@@ -6021,6 +6591,11 @@
       ],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "mio",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "libc",
@@ -6072,7 +6647,7 @@
         "kind": "git",
         "url": "https://github.com/pleme-io/moldura",
         "rev": "ed96d06ef5fa16e7cc047cbb9962e360c088d6e2",
-        "sha256": null
+        "sha256": "0b7qapgqwdsdfabjfsb6rnmffq9m2r5m2x83p5fgy6h3hxwb1day"
       },
       "features": [
         "default",
@@ -6080,6 +6655,11 @@
       ],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "moldura",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "anyhow",
@@ -6445,6 +7025,11 @@
       "features": [],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "murmurhash32",
+        "path": "src/lib.rs"
+      },
       "dependencies": [],
       "runtime_dependencies": [],
       "build_dependencies": [],
@@ -6467,6 +7052,11 @@
       ],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "no_std_compat",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "spin",
@@ -6509,6 +7099,11 @@
       ],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "nom",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "memchr",
@@ -6576,6 +7171,11 @@
       ],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "notify",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "bitflags",
@@ -6717,6 +7317,11 @@
       "features": [],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "notify_types",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "bitflags",
@@ -6758,6 +7363,11 @@
       ],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "nu_ansi_term",
+        "path": "src/lib.rs"
+      },
       "dependencies": [],
       "runtime_dependencies": [],
       "build_dependencies": [],
@@ -6776,6 +7386,11 @@
       "features": [],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "num_conv",
+        "path": "src/lib.rs"
+      },
       "dependencies": [],
       "runtime_dependencies": [],
       "build_dependencies": [],
@@ -6797,6 +7412,11 @@
       ],
       "proc_macro": false,
       "build_script": "build.rs",
+      "binaries": [],
+      "lib_target": {
+        "name": "num_traits",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "autocfg",
@@ -6854,6 +7474,11 @@
       "features": [],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "num_cpus",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "libc",
@@ -6898,6 +7523,11 @@
       ],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "once_cell",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "portable_atomic",
@@ -6947,6 +7577,11 @@
       ],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "oneshot",
+        "path": "src/lib.rs"
+      },
       "dependencies": [],
       "runtime_dependencies": [],
       "build_dependencies": [],
@@ -6965,6 +7600,11 @@
       "features": [],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "option_ext",
+        "path": "src/lib.rs"
+      },
       "dependencies": [],
       "runtime_dependencies": [],
       "build_dependencies": [],
@@ -6983,6 +7623,11 @@
       "features": [],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "ownedbytes",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "stable_deref_trait",
@@ -7021,6 +7666,11 @@
       "features": [],
       "proc_macro": false,
       "build_script": "build.rs",
+      "binaries": [],
+      "lib_target": {
+        "name": "owo_colors",
+        "path": "src/lib.rs"
+      },
       "dependencies": [],
       "runtime_dependencies": [],
       "build_dependencies": [],
@@ -7041,6 +7691,11 @@
       ],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "parking_lot",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "lock_api",
@@ -7097,6 +7752,11 @@
       "features": [],
       "proc_macro": false,
       "build_script": "build.rs",
+      "binaries": [],
+      "lib_target": {
+        "name": "parking_lot_core",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "cfg_if",
@@ -7178,6 +7838,11 @@
       "features": [],
       "proc_macro": true,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "pastey",
+        "path": "src/lib.rs"
+      },
       "dependencies": [],
       "runtime_dependencies": [],
       "build_dependencies": [],
@@ -7200,6 +7865,11 @@
       ],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "pear",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "inlinable_string",
@@ -7274,6 +7944,11 @@
       "features": [],
       "proc_macro": true,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "pear_codegen",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "proc_macro2",
@@ -7387,6 +8062,11 @@
       "features": [],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "pin_project_lite",
+        "path": "src/lib.rs"
+      },
       "dependencies": [],
       "runtime_dependencies": [],
       "build_dependencies": [],
@@ -7405,6 +8085,11 @@
       "features": [],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "pkg_config",
+        "path": "src/lib.rs"
+      },
       "dependencies": [],
       "runtime_dependencies": [],
       "build_dependencies": [],
@@ -7423,6 +8108,11 @@
       "features": [],
       "proc_macro": false,
       "build_script": "build.rs",
+      "binaries": [],
+      "lib_target": {
+        "name": "portable_atomic",
+        "path": "src/lib.rs"
+      },
       "dependencies": [],
       "runtime_dependencies": [],
       "build_dependencies": [],
@@ -7441,6 +8131,11 @@
       "features": [],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "powerfmt",
+        "path": "src/lib.rs"
+      },
       "dependencies": [],
       "runtime_dependencies": [],
       "build_dependencies": [],
@@ -7462,6 +8157,11 @@
       ],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "ppv_lite86",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "zerocopy",
@@ -7507,6 +8207,11 @@
       ],
       "proc_macro": false,
       "build_script": "build.rs",
+      "binaries": [],
+      "lib_target": {
+        "name": "proc_macro2",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "unicode_ident",
@@ -7556,6 +8261,11 @@
       ],
       "proc_macro": false,
       "build_script": "build.rs",
+      "binaries": [],
+      "lib_target": {
+        "name": "proc_macro2_diagnostics",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "proc_macro2",
@@ -7677,6 +8387,11 @@
       ],
       "proc_macro": false,
       "build_script": "build.rs",
+      "binaries": [],
+      "lib_target": {
+        "name": "quote",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "proc_macro2",
@@ -7728,6 +8443,11 @@
       ],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "rand",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "libc",
@@ -7804,6 +8524,11 @@
       ],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "rand_chacha",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "ppv_lite86",
@@ -7871,6 +8596,11 @@
       ],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "rand_core",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "getrandom",
@@ -7913,6 +8643,11 @@
       ],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "rand_distr",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "num_traits",
@@ -7976,6 +8711,11 @@
       "features": [],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "rayon",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "either",
@@ -8039,6 +8779,11 @@
       "features": [],
       "proc_macro": false,
       "build_script": "build.rs",
+      "binaries": [],
+      "lib_target": {
+        "name": "rayon_core",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "crossbeam_deque",
@@ -8108,6 +8853,11 @@
       "features": [],
       "proc_macro": false,
       "build_script": "build.rs",
+      "binaries": [],
+      "lib_target": {
+        "name": "ref_cast",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "ref_cast_impl",
@@ -8153,6 +8903,11 @@
       "features": [],
       "proc_macro": true,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "ref_cast_impl",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "proc_macro2",
@@ -8244,6 +8999,11 @@
       ],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "regex",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "aho_corasick",
@@ -8373,6 +9133,11 @@
       ],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "regex_automata",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "aho_corasick",
@@ -8471,6 +9236,11 @@
       ],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "regex_syntax",
+        "path": "src/lib.rs"
+      },
       "dependencies": [],
       "runtime_dependencies": [],
       "build_dependencies": [],
@@ -8494,6 +9264,24 @@
       ],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [
+        {
+          "name": "rhai-dbg",
+          "path": "src/bin/rhai-dbg.rs"
+        },
+        {
+          "name": "rhai-repl",
+          "path": "src/bin/rhai-repl.rs"
+        },
+        {
+          "name": "rhai-run",
+          "path": "src/bin/rhai-run.rs"
+        }
+      ],
+      "lib_target": {
+        "name": "rhai",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "ahash",
@@ -8718,6 +9506,11 @@
       ],
       "proc_macro": true,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "rhai_codegen",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "proc_macro2",
@@ -8818,6 +9611,11 @@
       ],
       "proc_macro": false,
       "build_script": "build.rs",
+      "binaries": [],
+      "lib_target": {
+        "name": "rmcp",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "async_trait",
@@ -9145,6 +9943,11 @@
       "features": [],
       "proc_macro": true,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "rmcp_macros",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "darling",
@@ -9266,6 +10069,11 @@
       "features": [],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "rust_stemmers",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "serde",
@@ -9325,6 +10133,11 @@
       ],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "rustc_hash",
+        "path": "src/lib.rs"
+      },
       "dependencies": [],
       "runtime_dependencies": [],
       "build_dependencies": [],
@@ -9343,6 +10156,11 @@
       "features": [],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "rustc_version",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "semver",
@@ -9390,6 +10208,11 @@
       ],
       "proc_macro": false,
       "build_script": "build.rs",
+      "binaries": [],
+      "lib_target": {
+        "name": "rustix",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "bitflags",
@@ -9478,6 +10301,11 @@
       ],
       "proc_macro": false,
       "build_script": "build.rs",
+      "binaries": [],
+      "lib_target": {
+        "name": "rustix",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "bitflags",
@@ -9559,6 +10387,11 @@
       "features": [],
       "proc_macro": true,
       "build_script": "build/build.rs",
+      "binaries": [],
+      "lib_target": {
+        "name": "rustversion",
+        "path": "src/lib.rs"
+      },
       "dependencies": [],
       "runtime_dependencies": [],
       "build_dependencies": [],
@@ -9577,6 +10410,11 @@
       "features": [],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "ryu",
+        "path": "src/lib.rs"
+      },
       "dependencies": [],
       "runtime_dependencies": [],
       "build_dependencies": [],
@@ -9595,6 +10433,11 @@
       "features": [],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "same_file",
+        "path": "src/lib.rs"
+      },
       "dependencies": [],
       "runtime_dependencies": [],
       "build_dependencies": [],
@@ -9617,6 +10460,11 @@
       ],
       "proc_macro": false,
       "build_script": "build.rs",
+      "binaries": [],
+      "lib_target": {
+        "name": "schemars",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "dyn_clone",
@@ -9726,6 +10574,11 @@
       ],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "schemars",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "chrono04",
@@ -9881,6 +10734,11 @@
       "features": [],
       "proc_macro": true,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "schemars_derive",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "proc_macro2",
@@ -9984,6 +10842,11 @@
       "features": [],
       "proc_macro": true,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "schemars_derive",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "proc_macro2",
@@ -10083,6 +10946,11 @@
       "features": [],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "scopeguard",
+        "path": "src/lib.rs"
+      },
       "dependencies": [],
       "runtime_dependencies": [],
       "build_dependencies": [],
@@ -10104,6 +10972,11 @@
       ],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "semver",
+        "path": "src/lib.rs"
+      },
       "dependencies": [],
       "runtime_dependencies": [],
       "build_dependencies": [],
@@ -10129,6 +11002,11 @@
       ],
       "proc_macro": false,
       "build_script": "build.rs",
+      "binaries": [],
+      "lib_target": {
+        "name": "serde",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "serde_core",
@@ -10194,6 +11072,11 @@
       ],
       "proc_macro": false,
       "build_script": "build.rs",
+      "binaries": [],
+      "lib_target": {
+        "name": "serde_core",
+        "path": "src/lib.rs"
+      },
       "dependencies": [],
       "runtime_dependencies": [],
       "build_dependencies": [],
@@ -10214,6 +11097,11 @@
       ],
       "proc_macro": true,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "serde_derive",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "proc_macro2",
@@ -10311,6 +11199,11 @@
       "features": [],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "serde_derive_internals",
+        "path": "lib.rs"
+      },
       "dependencies": [
         {
           "name": "proc_macro2",
@@ -10406,6 +11299,11 @@
       ],
       "proc_macro": false,
       "build_script": "build.rs",
+      "binaries": [],
+      "lib_target": {
+        "name": "serde_json",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "itoa",
@@ -10500,6 +11398,11 @@
       ],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "serde_spanned",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "serde",
@@ -10538,6 +11441,11 @@
       "features": [],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "serde_yaml",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "indexmap",
@@ -10655,6 +11563,11 @@
       "features": [],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "serde_yaml_ng",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "indexmap",
@@ -10772,6 +11685,11 @@
       "features": [],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "sharded_slab",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "lazy_static",
@@ -10805,11 +11723,16 @@
         "kind": "git",
         "url": "https://github.com/pleme-io/shikumi",
         "rev": "9eaa3aa99da9afadfb9ad635353b12db9ffb8b4a",
-        "sha256": null
+        "sha256": "0ad63lf5jp2n8kd3dqgkc6plndbckaxrgmhqdmpkdh9n51kjjjxh"
       },
       "features": [],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "shikumi",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "arc_swap",
@@ -10960,6 +11883,11 @@
       ],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "shlex",
+        "path": "src/lib.rs"
+      },
       "dependencies": [],
       "runtime_dependencies": [],
       "build_dependencies": [],
@@ -10982,6 +11910,11 @@
       ],
       "proc_macro": false,
       "build_script": "build.rs",
+      "binaries": [],
+      "lib_target": {
+        "name": "signal_hook",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "libc",
@@ -11048,6 +11981,11 @@
       ],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "signal_hook_mio",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "libc",
@@ -11135,6 +12073,11 @@
       "features": [],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "signal_hook_registry",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "errno",
@@ -11194,6 +12137,11 @@
       ],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "sketches_ddsketch",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "serde",
@@ -11240,6 +12188,11 @@
       ],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "slab",
+        "path": "src/lib.rs"
+      },
       "dependencies": [],
       "runtime_dependencies": [],
       "build_dependencies": [],
@@ -11262,6 +12215,11 @@
       ],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "smallvec",
+        "path": "src/lib.rs"
+      },
       "dependencies": [],
       "runtime_dependencies": [],
       "build_dependencies": [],
@@ -11282,6 +12240,11 @@
       ],
       "proc_macro": false,
       "build_script": "build.rs",
+      "binaries": [],
+      "lib_target": {
+        "name": "smartstring",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "autocfg",
@@ -11359,6 +12322,11 @@
       ],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "socket2",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "libc",
@@ -11392,11 +12360,16 @@
         "kind": "git",
         "url": "https://github.com/pleme-io/soushi",
         "rev": "a63a224ca9e2fe6a0df2d061120c5a739dcae0a6",
-        "sha256": null
+        "sha256": "0m3cq0h2pm03p1z1pz7xgwrshzb3svbkx37ak8wnkrx4w4sb0xfv"
       },
       "features": [],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "soushi",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "rhai",
@@ -11477,6 +12450,11 @@
       "features": [],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "spin",
+        "path": "src/lib.rs"
+      },
       "dependencies": [],
       "runtime_dependencies": [],
       "build_dependencies": [],
@@ -11499,6 +12477,11 @@
       ],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "stable_deref_trait",
+        "path": "src/lib.rs"
+      },
       "dependencies": [],
       "runtime_dependencies": [],
       "build_dependencies": [],
@@ -11517,6 +12500,11 @@
       "features": [],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "static_assertions",
+        "path": "src/lib.rs"
+      },
       "dependencies": [],
       "runtime_dependencies": [],
       "build_dependencies": [],
@@ -11535,6 +12523,11 @@
       "features": [],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "strsim",
+        "path": "src/lib.rs"
+      },
       "dependencies": [],
       "runtime_dependencies": [],
       "build_dependencies": [],
@@ -11564,6 +12557,11 @@
       ],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "syn",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "proc_macro2",
@@ -11649,6 +12647,16 @@
       "features": [],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [
+        {
+          "name": "tanken",
+          "path": "src/main.rs"
+        }
+      ],
+      "lib_target": {
+        "name": "tanken",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "arc_swap",
@@ -12109,11 +13117,16 @@
         "kind": "git",
         "url": "https://github.com/pleme-io/sakuin",
         "rev": "2c12e7ffdd3e2883c8a7f95dc3a25b751ea9dfbc",
-        "sha256": null
+        "sha256": "01d34ycxi9w0cl6p264jryfv1s9jb9dwnq90i896i6xsj0qf7hxv"
       },
       "features": [],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "tankyu",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "tantivy",
@@ -12179,6 +13192,11 @@
       ],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "tantivy",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "aho_corasick",
@@ -13064,6 +14082,11 @@
       "features": [],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "tantivy_bitpacker",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "bitpacking",
@@ -13106,6 +14129,11 @@
       "features": [],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "tantivy_columnar",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "downcast_rs",
@@ -13301,6 +14329,11 @@
       "features": [],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "tantivy_common",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "async_trait",
@@ -13430,6 +14463,11 @@
       ],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "tantivy_fst",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "byteorder",
@@ -13517,6 +14555,11 @@
       "features": [],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "tantivy_query_grammar",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "nom",
@@ -13555,6 +14598,11 @@
       "features": [],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "tantivy_sstable",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "tantivy_bitpacker",
@@ -13670,6 +14718,11 @@
       "features": [],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "tantivy_stacker",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "murmurhash32",
@@ -13751,6 +14804,11 @@
       "features": [],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "tantivy_tokenizer_api",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "serde",
@@ -13788,13 +14846,18 @@
         "kind": "git",
         "url": "https://github.com/pleme-io/tatara",
         "rev": "18c84c75e3b0d44f40e8790f3b51b6c11456d011",
-        "sha256": null
+        "sha256": "1s6w5frzb634s558i13cv0693qg9cg3laj3c1pvi5x9q9yssnz9k"
       },
       "features": [
         "default"
       ],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "tatara_lisp",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "blake3",
@@ -13911,11 +14974,16 @@
         "kind": "git",
         "url": "https://github.com/pleme-io/tatara",
         "rev": "18c84c75e3b0d44f40e8790f3b51b6c11456d011",
-        "sha256": null
+        "sha256": "1s6w5frzb634s558i13cv0693qg9cg3laj3c1pvi5x9q9yssnz9k"
       },
       "features": [],
       "proc_macro": true,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "tatara_lisp_derive",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "proc_macro2",
@@ -13996,11 +15064,16 @@
         "kind": "git",
         "url": "https://github.com/pleme-io/tatara",
         "rev": "18c84c75e3b0d44f40e8790f3b51b6c11456d011",
-        "sha256": null
+        "sha256": "1s6w5frzb634s558i13cv0693qg9cg3laj3c1pvi5x9q9yssnz9k"
       },
       "features": [],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "tatara_ui",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "blake3",
@@ -14209,6 +15282,11 @@
       ],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "tempfile",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "fastrand",
@@ -14309,6 +15387,11 @@
       "features": [],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "thin_vec",
+        "path": "src/lib.rs"
+      },
       "dependencies": [],
       "runtime_dependencies": [],
       "build_dependencies": [],
@@ -14327,6 +15410,11 @@
       "features": [],
       "proc_macro": false,
       "build_script": "build.rs",
+      "binaries": [],
+      "lib_target": {
+        "name": "thiserror",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "thiserror_impl",
@@ -14375,6 +15463,11 @@
       ],
       "proc_macro": false,
       "build_script": "build.rs",
+      "binaries": [],
+      "lib_target": {
+        "name": "thiserror",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "thiserror_impl",
@@ -14420,6 +15513,11 @@
       "features": [],
       "proc_macro": true,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "thiserror_impl",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "proc_macro2",
@@ -14501,6 +15599,11 @@
       "features": [],
       "proc_macro": true,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "thiserror_impl",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "proc_macro2",
@@ -14582,6 +15685,11 @@
       "features": [],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "thread_local",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "cfg_if",
@@ -14635,6 +15743,11 @@
       ],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "time",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "deranged",
@@ -14804,6 +15917,11 @@
       "features": [],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "time_core",
+        "path": "src/lib.rs"
+      },
       "dependencies": [],
       "runtime_dependencies": [],
       "build_dependencies": [],
@@ -14826,6 +15944,11 @@
       ],
       "proc_macro": true,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "time_macros",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "num_conv",
@@ -14898,6 +16021,11 @@
       ],
       "proc_macro": false,
       "build_script": "build.rs",
+      "binaries": [],
+      "lib_target": {
+        "name": "tiny_keccak",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "crunchy",
@@ -14958,6 +16086,11 @@
       ],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "tokio",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "bytes",
@@ -15145,6 +16278,11 @@
       "features": [],
       "proc_macro": true,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "tokio_macros",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "proc_macro2",
@@ -15233,6 +16371,11 @@
       ],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "tokio_util",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "bytes",
@@ -15370,6 +16513,11 @@
       ],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "toml",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "serde",
@@ -15476,6 +16624,11 @@
       ],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "toml_datetime",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "serde",
@@ -15518,6 +16671,11 @@
       ],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "toml_edit",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "indexmap",
@@ -15658,6 +16816,11 @@
       ],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "toml_write",
+        "path": "src/lib.rs"
+      },
       "dependencies": [],
       "runtime_dependencies": [],
       "build_dependencies": [],
@@ -15681,6 +16844,11 @@
       ],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "tracing",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "pin_project_lite",
@@ -15774,6 +16942,11 @@
       "features": [],
       "proc_macro": true,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "tracing_attributes",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "proc_macro2",
@@ -15875,6 +17048,11 @@
       ],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "tracing_core",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "once_cell",
@@ -15916,6 +17094,11 @@
       ],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "tracing_log",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "log",
@@ -16013,6 +17196,11 @@
       ],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "tracing_subscriber",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "matchers",
@@ -16247,6 +17435,11 @@
       ],
       "proc_macro": false,
       "build_script": "build.rs",
+      "binaries": [],
+      "lib_target": {
+        "name": "uncased",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "version_check",
@@ -16285,6 +17478,11 @@
       "features": [],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "unicode_ident",
+        "path": "src/lib.rs"
+      },
       "dependencies": [],
       "runtime_dependencies": [],
       "build_dependencies": [],
@@ -16303,6 +17501,11 @@
       "features": [],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "unicode_segmentation",
+        "path": "src/lib.rs"
+      },
       "dependencies": [],
       "runtime_dependencies": [],
       "build_dependencies": [],
@@ -16324,6 +17527,11 @@
       ],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "unicode_width",
+        "path": "src/lib.rs"
+      },
       "dependencies": [],
       "runtime_dependencies": [],
       "build_dependencies": [],
@@ -16342,6 +17550,20 @@
       "features": [],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [
+        {
+          "name": "run-emitter-test-suite",
+          "path": "src/bin/run-emitter-test-suite.rs"
+        },
+        {
+          "name": "run-parser-test-suite",
+          "path": "src/bin/run-parser-test-suite.rs"
+        }
+      ],
+      "lib_target": {
+        "name": "unsafe_libyaml",
+        "path": "src/lib.rs"
+      },
       "dependencies": [],
       "runtime_dependencies": [],
       "build_dependencies": [],
@@ -16360,6 +17582,11 @@
       "features": [],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "utf8_ranges",
+        "path": "src/lib.rs"
+      },
       "dependencies": [],
       "runtime_dependencies": [],
       "build_dependencies": [],
@@ -16380,6 +17607,11 @@
       ],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "utf8parse",
+        "path": "src/lib.rs"
+      },
       "dependencies": [],
       "runtime_dependencies": [],
       "build_dependencies": [],
@@ -16404,6 +17636,11 @@
       ],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "uuid",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "getrandom",
@@ -16460,6 +17697,11 @@
       "features": [],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "version_check",
+        "path": "src/lib.rs"
+      },
       "dependencies": [],
       "runtime_dependencies": [],
       "build_dependencies": [],
@@ -16478,6 +17720,11 @@
       "features": [],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "walkdir",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "same_file",
@@ -16527,6 +17774,11 @@
       ],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "winnow",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "memchr",
@@ -16569,6 +17821,11 @@
       ],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "yansi",
+        "path": "src/lib.rs"
+      },
       "dependencies": [],
       "runtime_dependencies": [],
       "build_dependencies": [],
@@ -16589,6 +17846,11 @@
       ],
       "proc_macro": false,
       "build_script": "build.rs",
+      "binaries": [],
+      "lib_target": {
+        "name": "zerocopy",
+        "path": "src/lib.rs"
+      },
       "dependencies": [],
       "runtime_dependencies": [],
       "build_dependencies": [],
@@ -16607,6 +17869,11 @@
       "features": [],
       "proc_macro": false,
       "build_script": "build.rs",
+      "binaries": [],
+      "lib_target": {
+        "name": "zmij",
+        "path": "src/lib.rs"
+      },
       "dependencies": [],
       "runtime_dependencies": [],
       "build_dependencies": [],
@@ -16631,6 +17898,11 @@
       ],
       "proc_macro": false,
       "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "zstd",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "zstd_safe",
@@ -16682,6 +17954,11 @@
       ],
       "proc_macro": false,
       "build_script": "build.rs",
+      "binaries": [],
+      "lib_target": {
+        "name": "zstd_safe",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "zstd_sys",
@@ -16732,6 +18009,11 @@
       ],
       "proc_macro": false,
       "build_script": "build.rs",
+      "binaries": [],
+      "lib_target": {
+        "name": "zstd_sys",
+        "path": "src/lib.rs"
+      },
       "dependencies": [
         {
           "name": "cc",
@@ -16790,5 +18072,11 @@
   "root_crate": "tanken-0.1.0",
   "workspace_members": [
     "tanken-0.1.0"
-  ]
+  ],
+  "flake_metadata": {
+    "tanken": {
+      "default_bin": "tanken",
+      "repo": "pleme-io/tanken"
+    }
+  }
 }
