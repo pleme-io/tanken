@@ -146,7 +146,7 @@ checksum = "c08606f8c3cbf4ce6ec8e28fb0014a2c086708fe954eaa885384a6165172e7e8"
 [[package]]
 name = "awase"
 version = "0.1.0"
-source = "git+https://github.com/pleme-io/awase#ec6176f462c7bcb683436b8f2ec626921e69df80"
+source = "git+https://github.com/pleme-io/awase#a4385518067eec901777bc91201e77cd4d07ef02"
 dependencies = [
  "serde",
  "thiserror 2.0.18",
@@ -329,15 +329,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "3d52eff69cd5e647efe296129160853a42795992097e8af39800e1060caeea9b"
 
 [[package]]
-name = "convert_case"
-version = "0.10.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "633458d4ef8c78b72454de2d54fd6ab2e60f9e02be22f3c6104cdc8a4e0fceb9"
-dependencies = [
- "unicode-segmentation",
-]
-
-[[package]]
 name = "core-foundation-sys"
 version = "0.8.7"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -403,28 +394,10 @@ checksum = "829d955a0bb380ef178a640b91779e3987da38c9aea133b20614cfed8cdea9c6"
 dependencies = [
  "bitflags 2.11.0",
  "crossterm_winapi",
- "mio",
- "parking_lot",
- "rustix 0.38.44",
- "signal-hook",
- "signal-hook-mio",
- "winapi",
-]
-
-[[package]]
-name = "crossterm"
-version = "0.29.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "d8b9f2e4c67f833b660cdb0a3523065869fb35570177239812ed4c905aeff87b"
-dependencies = [
- "bitflags 2.11.0",
- "crossterm_winapi",
- "derive_more",
- "document-features",
  "futures-core",
  "mio",
  "parking_lot",
- "rustix 1.1.4",
+ "rustix 0.38.44",
  "signal-hook",
  "signal-hook-mio",
  "winapi",
@@ -490,28 +463,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "derive_more"
-version = "2.1.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "d751e9e49156b02b44f9c1815bcb94b984cdcc4396ecc32521c739452808b134"
-dependencies = [
- "derive_more-impl",
-]
-
-[[package]]
-name = "derive_more-impl"
-version = "2.1.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "799a97264921d8623a957f6c3b9011f3b5492f557bbb7a5a19b7fa6d06ba8dcb"
-dependencies = [
- "convert_case",
- "proc-macro2",
- "quote",
- "rustc_version",
- "syn",
-]
-
-[[package]]
 name = "dirs"
 version = "6.0.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -529,16 +480,7 @@ dependencies = [
  "libc",
  "option-ext",
  "redox_users",
- "windows-sys 0.61.2",
-]
-
-[[package]]
-name = "document-features"
-version = "0.2.12"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "d4b8a88685455ed29a21542a33abd9cb6510b6b129abadabdcef0f4c55bc8f61"
-dependencies = [
- "litrs",
+ "windows-sys 0.60.2",
 ]
 
 [[package]]
@@ -556,7 +498,7 @@ checksum = "d0881ea181b1df73ff77ffaaf9c7544ecc11e82fba9b5f27b262a3c73a332555"
 [[package]]
 name = "egaku"
 version = "0.1.0"
-source = "git+https://github.com/pleme-io/egaku#b67e5bb1ab7b817bcc2ecd4ef7a8ea0e06fa814f"
+source = "git+https://github.com/pleme-io/egaku#0ea3762b7101beabcc97927735a7a437282ade64"
 dependencies = [
  "serde",
  "thiserror 2.0.18",
@@ -570,7 +512,7 @@ name = "egaku-term"
 version = "0.2.1"
 source = "git+https://github.com/pleme-io/egaku-term?tag=v0.2.1#aa3fd63402577c624df499e5e3798d313e4fe6cd"
 dependencies = [
- "crossterm 0.28.1",
+ "crossterm",
  "egaku",
  "thiserror 2.0.18",
  "unicode-width",
@@ -579,9 +521,9 @@ dependencies = [
 [[package]]
 name = "egaku-term"
 version = "0.2.1"
-source = "git+https://github.com/pleme-io/egaku-term#aa3fd63402577c624df499e5e3798d313e4fe6cd"
+source = "git+https://github.com/pleme-io/egaku-term#94fec198fb4245cc85f0a682da1fe0c9d699a08d"
 dependencies = [
- "crossterm 0.28.1",
+ "crossterm",
  "egaku",
  "thiserror 2.0.18",
  "unicode-width",
@@ -606,7 +548,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "39cab71617ae0d63f51a36d69f866391735b51691dbda63cf6f96d042b63efeb"
 dependencies = [
  "libc",
- "windows-sys 0.61.2",
+ "windows-sys 0.60.2",
 ]
 
 [[package]]
@@ -662,15 +604,6 @@ checksum = "f7e180ac76c23b45e767bd7ae9579bc0bb458618c4bc71835926e098e61d15f8"
 dependencies = [
  "rustix 0.38.44",
  "windows-sys 0.52.0",
-]
-
-[[package]]
-name = "fsevent-sys"
-version = "4.1.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "76ee7a02da4d231650c7cea31349b889be2f45ddb3ef3032d2ec8185f6313fd2"
-dependencies = [
- "libc",
 ]
 
 [[package]]
@@ -768,6 +701,43 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "54614a3312934d066701a80f20f15fa3b56d67ac7722b39eea5b4c9dd1d66c94"
 dependencies = [
  "thread_local",
+]
+
+[[package]]
+name = "gen-macros"
+version = "0.1.8"
+source = "git+https://github.com/pleme-io/gen#97aaf2e4ce3cfbc50d0f7377d227bda42dd4d2c6"
+dependencies = [
+ "proc-macro2",
+ "quote",
+ "syn",
+]
+
+[[package]]
+name = "gen-platform"
+version = "0.1.8"
+source = "git+https://github.com/pleme-io/gen#97aaf2e4ce3cfbc50d0f7377d227bda42dd4d2c6"
+dependencies = [
+ "gen-macros",
+ "gen-types",
+ "inventory",
+ "serde",
+ "serde_json",
+ "thiserror 2.0.18",
+]
+
+[[package]]
+name = "gen-types"
+version = "0.1.8"
+source = "git+https://github.com/pleme-io/gen#97aaf2e4ce3cfbc50d0f7377d227bda42dd4d2c6"
+dependencies = [
+ "blake3",
+ "chrono",
+ "indexmap",
+ "inventory",
+ "serde",
+ "serde_json",
+ "thiserror 2.0.18",
 ]
 
 [[package]]
@@ -943,6 +913,15 @@ dependencies = [
 ]
 
 [[package]]
+name = "inventory"
+version = "0.3.24"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "a4f0c30c76f2f4ccee3fe55a2435f691ca00c0e4bd87abe4f4a851b1d4dac39b"
+dependencies = [
+ "rustversion",
+]
+
+[[package]]
 name = "irodori"
 version = "0.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -959,8 +938,8 @@ checksum = "a6cb138bb79a146c1bd460005623e142ef0181e3d0219cb493e02f7d08a35695"
 
 [[package]]
 name = "ishou-tokens"
-version = "0.1.0"
-source = "git+https://github.com/pleme-io/ishou#eecc320061a0b0af73cc5aa63696f95ccc6cec42"
+version = "0.1.1"
+source = "git+https://github.com/pleme-io/ishou#9dbc234a345a4ddc456bd912a66e851840a07114"
 dependencies = [
  "irodori",
  "serde",
@@ -1004,11 +983,11 @@ dependencies = [
 
 [[package]]
 name = "kaname"
-version = "0.1.0"
-source = "git+https://github.com/pleme-io/kaname#b4191107edb45b277651685b6165b4d220fbf764"
+version = "0.1.1"
+source = "git+https://github.com/pleme-io/kaname#de15757779e51827c5a701de2e9cd85f120f45ff"
 dependencies = [
  "rmcp",
- "schemars 0.8.22",
+ "schemars 1.2.1",
  "serde",
  "serde_json",
  "thiserror 2.0.18",
@@ -1095,12 +1074,6 @@ name = "linux-raw-sys"
 version = "0.12.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "32a66949e030da00e8c7d4434b251670a91556f4144941d37452769c25d58a53"
-
-[[package]]
-name = "litrs"
-version = "1.0.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "11d3d7f243d5c5a8b9bb5d6dd2b1602c0cb0b9db1621bafc7ed66e35ff9fe092"
 
 [[package]]
 name = "lock_api"
@@ -1195,12 +1168,12 @@ dependencies = [
 
 [[package]]
 name = "moldura"
-version = "0.1.0"
-source = "git+https://github.com/pleme-io/moldura#ed96d06ef5fa16e7cc047cbb9962e360c088d6e2"
+version = "0.1.3"
+source = "git+https://github.com/pleme-io/moldura#ea2d6012f7e0f356efb63cdda89f9f7c3dd48c9b"
 dependencies = [
  "anyhow",
  "arc-swap",
- "crossterm 0.29.0",
+ "crossterm",
  "egaku",
  "egaku-term 0.2.1 (git+https://github.com/pleme-io/egaku-term)",
  "ishou-tokens",
@@ -1249,7 +1222,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "4d3d07927151ff8575b7087f245456e549fea62edf0ec4e565a5ee50c8402bc3"
 dependencies = [
  "bitflags 2.11.0",
- "fsevent-sys",
  "inotify",
  "kqueue",
  "libc",
@@ -1275,7 +1247,7 @@ version = "0.50.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "7957b9740744892f114936ab4a57b3f487491bbeafaf8083688b16841a4240e5"
 dependencies = [
- "windows-sys 0.61.2",
+ "windows-sys 0.60.2",
 ]
 
 [[package]]
@@ -1694,15 +1666,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "08d43f7aa6b08d49f382cde6a7982047c3426db949b1424bc4b7ec9ae12c6ce2"
 
 [[package]]
-name = "rustc_version"
-version = "0.4.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "cfcb3a22ef46e85b45de6ee7e79d063319ebb6594faafcf1c225ea92ab6e9b92"
-dependencies = [
- "semver",
-]
-
-[[package]]
 name = "rustix"
 version = "0.38.44"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1725,7 +1688,7 @@ dependencies = [
  "errno",
  "libc",
  "linux-raw-sys 0.12.1",
- "windows-sys 0.61.2",
+ "windows-sys 0.60.2",
 ]
 
 [[package]]
@@ -1912,12 +1875,17 @@ dependencies = [
 [[package]]
 name = "shikumi"
 version = "0.1.0"
-source = "git+https://github.com/pleme-io/shikumi#9eaa3aa99da9afadfb9ad635353b12db9ffb8b4a"
+source = "git+https://github.com/pleme-io/shikumi#f6b4bd1a2c5757ad640f92b759b9e4eedb8e1013"
 dependencies = [
  "arc-swap",
+ "async-trait",
  "figment",
+ "gen-platform",
+ "gen-types",
  "notify",
  "serde",
+ "serde_json",
+ "serde_yaml",
  "thiserror 2.0.18",
  "tracing",
 ]
@@ -2003,8 +1971,8 @@ dependencies = [
 
 [[package]]
 name = "soushi"
-version = "0.1.0"
-source = "git+https://github.com/pleme-io/soushi#a63a224ca9e2fe6a0df2d061120c5a739dcae0a6"
+version = "0.1.1"
+source = "git+https://github.com/pleme-io/soushi#4ab99cd4566bbde5aadd84f02eb62bb10eb62e7a"
 dependencies = [
  "rhai",
  "thiserror 2.0.18",
@@ -2054,7 +2022,7 @@ dependencies = [
  "awase",
  "chrono",
  "clap",
- "crossterm 0.28.1",
+ "crossterm",
  "dirs",
  "egaku",
  "egaku-term 0.2.1 (git+https://github.com/pleme-io/egaku-term?tag=v0.2.1)",
@@ -2077,8 +2045,8 @@ dependencies = [
 
 [[package]]
 name = "tankyu"
-version = "0.1.0"
-source = "git+https://github.com/pleme-io/sakuin#2c12e7ffdd3e2883c8a7f95dc3a25b751ea9dfbc"
+version = "0.1.1"
+source = "git+https://github.com/pleme-io/sakuin#bebb6e28c4d8ce47a1fe1296e4b6441175abe5b7"
 dependencies = [
  "tantivy",
  "tracing",
@@ -2227,8 +2195,8 @@ dependencies = [
 
 [[package]]
 name = "tatara-lisp"
-version = "0.2.0"
-source = "git+https://github.com/pleme-io/tatara#18c84c75e3b0d44f40e8790f3b51b6c11456d011"
+version = "0.2.3"
+source = "git+https://github.com/pleme-io/tatara#6bcdf2f09c69c859a85e354cecaf1036cd4ca163"
 dependencies = [
  "blake3",
  "serde",
@@ -2239,8 +2207,8 @@ dependencies = [
 
 [[package]]
 name = "tatara-lisp-derive"
-version = "0.2.0"
-source = "git+https://github.com/pleme-io/tatara#18c84c75e3b0d44f40e8790f3b51b6c11456d011"
+version = "0.2.3"
+source = "git+https://github.com/pleme-io/tatara#6bcdf2f09c69c859a85e354cecaf1036cd4ca163"
 dependencies = [
  "proc-macro2",
  "quote",
@@ -2249,8 +2217,8 @@ dependencies = [
 
 [[package]]
 name = "tatara-ui"
-version = "0.2.0"
-source = "git+https://github.com/pleme-io/tatara#18c84c75e3b0d44f40e8790f3b51b6c11456d011"
+version = "0.2.3"
+source = "git+https://github.com/pleme-io/tatara#6bcdf2f09c69c859a85e354cecaf1036cd4ca163"
 dependencies = [
  "blake3",
  "hex",
@@ -2273,7 +2241,7 @@ dependencies = [
  "getrandom 0.4.2",
  "once_cell",
  "rustix 1.1.4",
- "windows-sys 0.61.2",
+ "windows-sys 0.60.2",
 ]
 
 [[package]]
@@ -2744,7 +2712,7 @@ version = "0.1.11"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "c2a7b1c03c876122aa43f3020e6c3c3ee5c05081c9a00739faf7503aeba10d22"
 dependencies = [
- "windows-sys 0.61.2",
+ "windows-sys 0.60.2",
 ]
 
 [[package]]
