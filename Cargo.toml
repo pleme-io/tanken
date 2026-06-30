@@ -41,6 +41,9 @@ moldura = { git = "https://github.com/pleme-io/moldura" }
 crossterm = "0.28"
 egaku-term = { git = "https://github.com/pleme-io/egaku-term", tag = "v0.2.1" }
 egaku = { git = "https://github.com/pleme-io/egaku" }
+# Fleet design system — the single source for tanken's Nord palette.
+# Paint-site colours come from ishou tokens, never hand-authored hex.
+ishou-tokens = { git = "https://github.com/pleme-io/ishou" }
 chrono = "0.4"
 humansize = "2"
 fuzzy-matcher = "0.3"

@@ -2028,6 +2028,7 @@ dependencies = [
  "egaku-term 0.2.1 (git+https://github.com/pleme-io/egaku-term?tag=v0.2.1)",
  "fuzzy-matcher",
  "humansize",
+ "ishou-tokens",
  "kaname",
  "moldura",
  "rmcp",

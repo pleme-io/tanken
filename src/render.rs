@@ -4,6 +4,8 @@
 //! optional input-mode overlay painted on top of the status row.
 //! Main area splits into three columns: left pane | right pane | preview.
 
+use std::sync::LazyLock;
+
 use crossterm::style::{Attribute, Color};
 use egaku::Rect;
 use egaku_term::crossterm::{
@@ -12,6 +14,7 @@ use egaku_term::crossterm::{
     style::{Print, ResetColor, SetAttribute, SetBackgroundColor, SetForegroundColor},
 };
 use egaku_term::{Terminal, draw, theme::Palette};
+use ishou_tokens::{ColorPalette, Rgb};
 
 use crate::app::App;
 use crate::input::Mode;
@@ -28,48 +31,107 @@ struct Style {
 
 impl Style {
     const fn fg(c: Color) -> Self {
-        Self { fg: c, bg: None, attr: Attribute::Reset }
+        Self {
+            fg: c,
+            bg: None,
+            attr: Attribute::Reset,
+        }
     }
     const fn bg(self, c: Color) -> Self {
-        Self { bg: Some(c), ..self }
+        Self {
+            bg: Some(c),
+            ..self
+        }
     }
     const fn bold(self) -> Self {
-        Self { attr: Attribute::Bold, ..self }
+        Self {
+            attr: Attribute::Bold,
+            ..self
+        }
     }
 }
 
-/// Default file-manager palette — Nord-flavored constants chosen to
-/// match the previous ratatui rendering.
-const PAL_FG: Color = Color::Rgb { r: 216, g: 222, b: 233 };       // Nord4
-const PAL_BG: Color = Color::Rgb { r: 46, g: 52, b: 64 };          // Nord0
-const PAL_DIM: Color = Color::Rgb { r: 76, g: 86, b: 106 };        // Nord3
-const PAL_BORDER: Color = Color::Rgb { r: 76, g: 86, b: 106 };     // Nord3
-const PAL_BORDER_FOCUS: Color = Color::Rgb { r: 136, g: 192, b: 208 }; // Nord8
-const PAL_DIR: Color = Color::Rgb { r: 129, g: 161, b: 193 };      // Nord9 (blue)
-const PAL_CURSOR_BG: Color = Color::Rgb { r: 229, g: 233, b: 240 };  // Nord5
-const PAL_CURSOR_FG: Color = Color::Rgb { r: 46, g: 52, b: 64 };     // Nord0
-const PAL_SELECTED_FG: Color = Color::Rgb { r: 235, g: 203, b: 139 };  // Nord13 (yellow)
-const PAL_SELECTED_BG: Color = Color::Rgb { r: 235, g: 203, b: 139 };  // also yellow for cursor+selected
-const PAL_INPUT_FG: Color = Color::Rgb { r: 235, g: 203, b: 139 };   // Nord13
-const PAL_TAB_BAR_BG: Color = Color::Rgb { r: 59, g: 66, b: 82 };    // Nord1
-const PAL_TAB_ACTIVE_FG: Color = Color::Rgb { r: 46, g: 52, b: 64 }; // Nord0
-const PAL_TAB_ACTIVE_BG: Color = Color::Rgb { r: 136, g: 192, b: 208 }; // Nord8
-const PAL_TAB_INACTIVE_FG: Color = Color::Rgb { r: 200, g: 200, b: 200 };
-const PAL_STATUS_BG: Color = Color::Rgb { r: 59, g: 66, b: 82 };
-const PAL_STATUS_FG: Color = Color::Rgb { r: 216, g: 222, b: 233 };
-const PAL_INPUT_BG: Color = PAL_BG;
+/// A crossterm paint colour from an ishou Nord token.
+const fn nord(c: Rgb) -> Color {
+    Color::Rgb {
+        r: c.r,
+        g: c.g,
+        b: c.b,
+    }
+}
+
+/// Tanken's file-manager paint palette, sourced entirely from ishou's
+/// Nord tokens (`ColorPalette::pleme()`) — no hand-authored hex at any
+/// paint site. Each field is annotated with its Nord index for parity
+/// with the design system; the values are byte-identical to the Nord
+/// palette ishou ships, so the palette can never drift from the fleet
+/// design framework.
+struct TankenPalette {
+    fg: Color,
+    bg: Color,
+    dim: Color,
+    border: Color,
+    border_focus: Color,
+    dir: Color,
+    cursor_bg: Color,
+    cursor_fg: Color,
+    selected_fg: Color,
+    selected_bg: Color,
+    input_fg: Color,
+    tab_bar_bg: Color,
+    tab_active_fg: Color,
+    tab_active_bg: Color,
+    tab_inactive_fg: Color,
+    status_bg: Color,
+    status_fg: Color,
+    input_bg: Color,
+    error: Color,
+    warning: Color,
+    success: Color,
+}
+
+/// Resolved once at first paint from the fleet Nord tokens.
+static PAL: LazyLock<TankenPalette> = LazyLock::new(|| {
+    let n = ColorPalette::pleme();
+    TankenPalette {
+        fg: nord(n.snow_storm_0),             // Nord4
+        bg: nord(n.polar_night_0),            // Nord0
+        dim: nord(n.polar_night_3),           // Nord3
+        border: nord(n.polar_night_3),        // Nord3
+        border_focus: nord(n.frost_1),        // Nord8
+        dir: nord(n.frost_2),                 // Nord9 (blue)
+        cursor_bg: nord(n.snow_storm_1),      // Nord5
+        cursor_fg: nord(n.polar_night_0),     // Nord0
+        selected_fg: nord(n.aurora_yellow),   // Nord13 (yellow)
+        selected_bg: nord(n.aurora_yellow),   // Nord13 — cursor+selected
+        input_fg: nord(n.aurora_yellow),      // Nord13
+        tab_bar_bg: nord(n.polar_night_1),    // Nord1
+        tab_active_fg: nord(n.polar_night_0), // Nord0
+        tab_active_bg: nord(n.frost_1),       // Nord8
+        // Was a lone generic grey (200,200,200) — now a real Nord token,
+        // restoring palette consistency. Snow Storm reads clearly on the
+        // dark tab bar while staying de-emphasised vs the active tab.
+        tab_inactive_fg: nord(n.snow_storm_0), // Nord4
+        status_bg: nord(n.polar_night_1),      // Nord1
+        status_fg: nord(n.snow_storm_0),       // Nord4
+        input_bg: nord(n.polar_night_0),       // Nord0
+        error: nord(n.aurora_red),             // Nord11
+        warning: nord(n.aurora_yellow),        // Nord13
+        success: nord(n.aurora_green),         // Nord14
+    }
+});
 
 fn palette() -> Palette {
     Palette {
-        background: PAL_BG,
-        foreground: PAL_FG,
-        accent: PAL_BORDER_FOCUS,
-        error: Color::Rgb { r: 191, g: 97, b: 106 },
-        warning: Color::Rgb { r: 235, g: 203, b: 139 },
-        success: Color::Rgb { r: 163, g: 190, b: 140 },
-        selection: PAL_DIM,
-        muted: PAL_DIM,
-        border: PAL_BORDER,
+        background: PAL.bg,
+        foreground: PAL.fg,
+        accent: PAL.border_focus,
+        error: PAL.error,
+        warning: PAL.warning,
+        success: PAL.success,
+        selection: PAL.dim,
+        muted: PAL.dim,
+        border: PAL.border,
     }
 }
 
@@ -104,8 +166,8 @@ pub fn draw(term: &mut Terminal, app: &mut App) -> Result<(), Box<dyn std::error
 fn fill_bg(term: &mut Terminal, cols: u16, rows: u16) -> Result<(), Box<dyn std::error::Error>> {
     let blank = " ".repeat(usize::from(cols));
     term.out()
-        .queue(SetBackgroundColor(PAL_BG))?
-        .queue(SetForegroundColor(PAL_FG))?;
+        .queue(SetBackgroundColor(PAL.bg))?
+        .queue(SetForegroundColor(PAL.fg))?;
     for r in 0..rows {
         term.out().queue(MoveTo(0, r))?.queue(Print(&blank))?;
     }
@@ -113,14 +175,18 @@ fn fill_bg(term: &mut Terminal, cols: u16, rows: u16) -> Result<(), Box<dyn std:
     Ok(())
 }
 
-fn draw_tab_bar(term: &mut Terminal, app: &App, rect: Rect) -> Result<(), Box<dyn std::error::Error>> {
+fn draw_tab_bar(
+    term: &mut Terminal,
+    app: &App,
+    rect: Rect,
+) -> Result<(), Box<dyn std::error::Error>> {
     let (x, y, w, _h) = cells(rect);
     if w == 0 {
         return Ok(());
     }
     let blank = " ".repeat(usize::from(w));
     term.out()
-        .queue(SetBackgroundColor(PAL_TAB_BAR_BG))?
+        .queue(SetBackgroundColor(PAL.tab_bar_bg))?
         .queue(MoveTo(x, y))?
         .queue(Print(&blank))?;
 
@@ -132,9 +198,9 @@ fn draw_tab_bar(term: &mut Terminal, app: &App, rect: Rect) -> Result<(), Box<dy
             break;
         }
         let style = if i == app.tabs.active {
-            Style::fg(PAL_TAB_ACTIVE_FG).bg(PAL_TAB_ACTIVE_BG).bold()
+            Style::fg(PAL.tab_active_fg).bg(PAL.tab_active_bg).bold()
         } else {
-            Style::fg(PAL_TAB_INACTIVE_FG).bg(PAL_TAB_BAR_BG)
+            Style::fg(PAL.tab_inactive_fg).bg(PAL.tab_bar_bg)
         };
         paint_styled(term, col, y, lw, &label, style)?;
         col += lw + 1;
@@ -143,7 +209,11 @@ fn draw_tab_bar(term: &mut Terminal, app: &App, rect: Rect) -> Result<(), Box<dy
     Ok(())
 }
 
-fn draw_main_area(term: &mut Terminal, app: &mut App, rect: Rect) -> Result<(), Box<dyn std::error::Error>> {
+fn draw_main_area(
+    term: &mut Terminal,
+    app: &mut App,
+    rect: Rect,
+) -> Result<(), Box<dyn std::error::Error>> {
     let (x, y, w, h) = cells(rect);
     if w < 6 || h < 3 {
         return Ok(());
@@ -176,7 +246,11 @@ fn draw_main_area(term: &mut Terminal, app: &mut App, rect: Rect) -> Result<(), 
     draw_file_list(term, &mut dual.left, left_rect, left_active)?;
     draw_file_list(term, &mut dual.right, right_rect, right_active)?;
 
-    let active_pane = if dual.active_right { &dual.right } else { &dual.left };
+    let active_pane = if dual.active_right {
+        &dual.right
+    } else {
+        &dual.left
+    };
     draw_preview(term, active_pane, preview_rect)?;
     Ok(())
 }
@@ -232,18 +306,22 @@ fn draw_file_list(
         );
 
         let style = match (is_cursor, is_selected, entry.is_dir) {
-            (true, true, _) => Style::fg(PAL_TAB_ACTIVE_FG).bg(PAL_SELECTED_BG).bold(),
-            (true, false, _) => Style::fg(PAL_CURSOR_FG).bg(PAL_CURSOR_BG),
-            (false, true, _) => Style::fg(PAL_SELECTED_FG).bold(),
-            (false, false, true) => Style::fg(PAL_DIR).bold(),
-            (false, false, false) => Style::fg(PAL_FG),
+            (true, true, _) => Style::fg(PAL.tab_active_fg).bg(PAL.selected_bg).bold(),
+            (true, false, _) => Style::fg(PAL.cursor_fg).bg(PAL.cursor_bg),
+            (false, true, _) => Style::fg(PAL.selected_fg).bold(),
+            (false, false, true) => Style::fg(PAL.dir).bold(),
+            (false, false, false) => Style::fg(PAL.fg),
         };
         paint_styled(term, ix, iy + row, iw, &line_text, style)?;
     }
     Ok(())
 }
 
-fn draw_preview(term: &mut Terminal, active_pane: &Pane, rect: Rect) -> Result<(), Box<dyn std::error::Error>> {
+fn draw_preview(
+    term: &mut Terminal,
+    active_pane: &Pane,
+    rect: Rect,
+) -> Result<(), Box<dyn std::error::Error>> {
     let pal = palette();
     draw::bordered_block_with(term, rect, " Preview ", false, &pal).map_err(map_err)?;
     let inner = draw::block_inner(rect);
@@ -261,12 +339,16 @@ fn draw_preview(term: &mut Terminal, active_pane: &Pane, rect: Rect) -> Result<(
 
     for (i, line) in lines.iter().enumerate().take(usize::from(ih)) {
         let row = u16::try_from(i).unwrap_or(u16::MAX);
-        paint_styled(term, ix, iy + row, iw, line, Style::fg(PAL_DIM))?;
+        paint_styled(term, ix, iy + row, iw, line, Style::fg(PAL.dim))?;
     }
     Ok(())
 }
 
-fn draw_status_bar(term: &mut Terminal, app: &App, rect: Rect) -> Result<(), Box<dyn std::error::Error>> {
+fn draw_status_bar(
+    term: &mut Terminal,
+    app: &App,
+    rect: Rect,
+) -> Result<(), Box<dyn std::error::Error>> {
     let tab = app.tabs.active_tab();
     let pane = tab.panes.active();
 
@@ -297,13 +379,17 @@ fn draw_status_bar(term: &mut Terminal, app: &App, rect: Rect) -> Result<(), Box
     };
 
     let mut pal = palette();
-    pal.background = PAL_STATUS_BG;
-    pal.foreground = PAL_STATUS_FG;
-    pal.selection = PAL_STATUS_BG;
+    pal.background = PAL.status_bg;
+    pal.foreground = PAL.status_fg;
+    pal.selection = PAL.status_bg;
     draw::status_line_with(term, rect, &left, &right, &pal).map_err(map_err)
 }
 
-fn draw_input_overlay(term: &mut Terminal, app: &App, rect: Rect) -> Result<(), Box<dyn std::error::Error>> {
+fn draw_input_overlay(
+    term: &mut Terminal,
+    app: &App,
+    rect: Rect,
+) -> Result<(), Box<dyn std::error::Error>> {
     let prefix = match app.input.mode {
         Mode::Command => ":",
         Mode::Search => "/",
@@ -316,7 +402,7 @@ fn draw_input_overlay(term: &mut Terminal, app: &App, rect: Rect) -> Result<(), 
     let (x, y, w, _h) = cells(rect);
     let blank = " ".repeat(usize::from(w));
     term.out()
-        .queue(SetBackgroundColor(PAL_INPUT_BG))?
+        .queue(SetBackgroundColor(PAL.input_bg))?
         .queue(MoveTo(x, y))?
         .queue(Print(&blank))?;
     paint_styled(
@@ -325,7 +411,7 @@ fn draw_input_overlay(term: &mut Terminal, app: &App, rect: Rect) -> Result<(), 
         y,
         w,
         &text,
-        Style::fg(PAL_INPUT_FG).bg(PAL_INPUT_BG).bold(),
+        Style::fg(PAL.input_fg).bg(PAL.input_bg).bold(),
     )?;
     Ok(())
 }
